@@ -7,7 +7,7 @@ const copy = (src: string, dest: string) => {
   const stats = fs.statSync(src);
   const isDirectory = exists && stats.isDirectory();
 
-  if (['~', '#'].some(it => dest.includes(it))) return;
+  if (["~", "#"].some((it) => dest.includes(it))) return;
 
   dest = dest.replace("template", "");
 

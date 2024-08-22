@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 "use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
@@ -19,7 +20,7 @@ const copy = (src, dest) => {
     const exists = fs_1.default.existsSync(src);
     const stats = fs_1.default.statSync(src);
     const isDirectory = exists && stats.isDirectory();
-    if (['~', '#'].some(it => dest.includes(it)))
+    if (["~", "#"].some((it) => dest.includes(it)))
         return;
     dest = dest.replace("template", "");
     if (isDirectory) {

@@ -1,12 +1,12 @@
 {
   "name": "plicit-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "bin": {
     "plicit-cli": "./dist/index.js"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig.json && cp -r ./template ./dist/template; wait",
+    "build": "tsc -p ./tsconfig.json && sed -i '1s/^/\\#\\!\\/usr\\/bin\\/env node\\n/' ./dist/index.js && cp -r ./template ./dist/template; wait",
     "start": "node ./dist/index.js"
   },
   "author": "",
